@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esencia y Ciencia</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2c2c2c;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-image: url(https://raw.githubusercontent.com/Carmanzuba/Esencia-y-Ciencia-70/main/portada_3.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Opcional: contenedor para texto encima de la imagen */
+    .contenido-portada {
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .boton-portada {
+      padding: 12px 25px;
+      background-color: #3c6e71;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-portada:hover {
+      background-color: #2f5c5f;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #3c6e71;
+    }
+
+    .accordion {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .accordion-header {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #e0f7f1;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #3c6e71;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      header {
+        height: 70vh;
+        background-size: contain;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        height: 60vh;
+        background-size: contain;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Puedes añadir más contenido aquí si lo deseas -->
+    <div class="contenido-portada">
+      <button class="boton-portada" onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });">Ver productos</button>
+    </div>
+  </header>
+
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos una empresa dedicada a la producción y comercialización de productos naturales, preparados con amor y respeto por la Tierra. Valoramos los conocimientos tradicionales y los fusionamos con técnicas modernas para brindarte lo mejor de la naturaleza.</p>
+
+    <h2>Misión</h2>
+    <p>Promover el bienestar integral a través de productos naturales y educación sobre el uso consciente de plantas medicinales y recursos naturales.</p>
+
+    <h2>Visión</h2>
+    <p>Ser líderes en educación y productos naturales en Latinoamérica, empoderando a las personas con conocimientos que sanan cuerpo, mente y espíritu.</p>
+
+    <h2 id="productos">Nuestros Productos</h2>
+    <p>Ofrecemos aceites esenciales, tinturas madres, ungüentos, jabones artesanales, y más. Todos elaborados con ingredientes orgánicos y de producción sustentable.</p>
+
+    <h2>Nuestros Cursos</h2>
+    <p>Aprende sobre plantas medicinales (medicina tradicional), cosmética natural, destilación de aceites esenciales, elaboración de jabones artesanales, desde cero, huertos urbanos, agricultura orgánica, herbolaria. Naturaleza y salud y más. Nuestros cursos son online y presenciales, impartidos por expertos con años de experiencia.</p>
+
+    <div class="accordion">
+      <div class="accordion-header">Plantas Medicinales</div>
+      <div class="accordion-content">Aprende sobre el uso tradicional y científico de plantas para la salud integral.</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header">Cosmética Natural</div>
+      <div class="accordion-content">Formulación de cremas, ungüentos y productos faciales con ingredientes naturales.</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header">Destilación de Aceites Esenciales</div>
+      <div class="accordion-content">Técnicas prácticas de destilación, calidad de aceites y usos terapéuticos.</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header">Jabones Artesanales</div>
+      <div class="accordion-content">Proceso desde cero para elaborar jabones naturales y personalizados.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contáctanos</h2>
+    <p>¿Tienes preguntas o deseas más información? Déjanos tus datos y nos pondremos en contacto contigo.</p>
+    <form id="contactForm">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <script>
+    // Acordeón interactivo
+    const accordions = document.querySelectorAll('.accordion-header');
+    accordions.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Formulario de contacto (sin envío real)
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('¡Gracias por contactarnos! Nos comunicaremos contigo pronto.');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
